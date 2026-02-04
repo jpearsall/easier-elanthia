@@ -1,0 +1,12 @@
+#from .go bank
+setvariable boatname your boat name
+put out 
+put out
+put e
+put s
+put s
+put s
+put climb stair
+put d
+put go dock
+put go %boatname
