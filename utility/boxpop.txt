@@ -1,0 +1,206 @@
+put remove helm
+put put helm in pack
+put remove ring shirt
+put put ring shirt in pack
+put remove glove
+put put glove in pack
+put remove greave
+put put greave in pack
+put remove shield
+put put shield in pack
+put remove parry stick
+put put parry stick in pack
+
+start:
+match skippet skippet
+match trunk trunk
+match casket casket
+match coffer coffer
+match caddy caddy
+match strongbox strongbox
+match box box
+match crate crate
+match chest chest
+put look in thi case
+matchwait
+
+casket:
+put take casket
+goto disarmident
+
+skippet:
+put take skippet
+goto disarmident
+
+trunk:
+put take trunk
+goto disarmident
+
+coffer:
+put take coffer
+goto disarmident
+
+caddy:
+put take caddy
+goto disarmident
+
+strongbox:
+put take strongbox
+goto disarmident
+
+box:
+put take box from thi case
+goto disarmident
+
+crate:
+put take crate
+goto disarmident
+
+chest:
+put take chest
+goto disarmidentpause
+
+disarmidentpause:
+pause
+
+disarmident:
+match disarmident ...wait
+match pickidentpause Roundtime: 3 sec.
+match disarmident Roundtime:
+match disarm Somebody has already
+put disarm ident
+matchwait
+
+disarm:
+match disarm ...wait
+match disarmidentpause Roundtime:
+put disarm
+matchwait
+
+pickidentpause:
+pause
+goto pickident
+
+pickident:
+match pickident ...wait
+match pickident Roundtime
+match pickanalpause inspected the current lock
+match openpause It's not even locked
+put pick ident
+matchwait
+
+pickanalpause:
+pause
+goto pickanal
+
+pickanal:
+match pickanal ...wait
+match pickanal Roundtime
+match pickpause been analyzed...
+put pick anal
+matchwait
+
+pickpause:
+pause
+goto pick
+
+pick:
+match pick ...wait
+match pickident Roundtime
+put pick %2
+matchwait
+
+openpause:
+pause
+goto open
+
+open:
+match trunkopen trunk
+match cofferopen coffer
+match casketopen casket
+match chestopen chest
+match caddyopen caddy
+match strongboxopen strongbox
+match boxopen box
+match crateopen crate
+match skippetopen skippet
+put glance
+matchwait
+
+casketopen:
+put open my cask
+put disman my cask %3
+put disman my cask %3
+pause
+goto loot
+
+skippetopen:
+put open my skippet
+put disman my skippet %3
+put disman my skippet %3
+pause
+goto loot
+
+trunkopen:
+put open my trunk
+put disman my trunk %3
+put disman my trunk %3
+pause
+goto loot
+
+cofferopen:
+put open my coffer
+put disman my coffer %3
+put disman my coffer %3
+pause
+goto loot
+
+chestopen:
+put open my chest
+put disman my chest %3
+put disman my chest %3
+pause
+goto loot
+
+caddyopen:
+put open my caddy
+put disman my caddy %3
+put disman my caddy %3
+pause
+goto loot
+
+strongboxopen:
+put open my strongbox
+put disman my strongbox %3
+put disman my strongbox %3
+pause
+goto loot
+
+boxopen:
+put open my box
+put disman my box %3
+put disman my box %3
+pause
+goto loot
+
+crateopen:
+put open my crate
+put disman my crate %3
+put disman my crate %3
+goto loot
+
+loot:
+put stow coin
+put stow coin
+put stow coin
+wait
+put stow gem
+put stow gem
+put stow gem
+put stow gem
+wait
+put stow ostra
+put stow map
+put stow roll
+put stow scroll
+goto start
