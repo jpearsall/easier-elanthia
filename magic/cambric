@@ -1,0 +1,12 @@
+put prep sott 10
+wait
+put get cam cob from lot pou
+wait 1
+put charge cam cob 20
+wait 6
+put invoke cam cob
+wait 1
+put stow cam cob in lot pou
+wait 12
+put cast
+wait
